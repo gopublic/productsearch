@@ -1,0 +1,26 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# IDEA propriatery files
+.idea
+*.iml
+target
+
+*.log
+
+# mongo files
+pid
+*.pid
+mongodb/server*
+mongodb/arbitor/*
+
+# exclude node files for now
+backend/Node/*
+
+# exclude Django for now
+Django
+Django.backup
