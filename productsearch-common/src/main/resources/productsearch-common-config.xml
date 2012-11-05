@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <context:annotation-config/>
+
+    <context:property-placeholder system-properties-mode="FALLBACK" location="classpath:kv-constant.properties"/>
+
+    <bean id="kvConstant" class="com.kv.productsearch.common.utils.KVConstant">
+        <property name="kvProductTSVFileName" value="${PRODUCT_TSV_FILE}"/>
+        <property name="kvProductIndexFileName" value="${PRODUCT_INDEX_FILE}"/>
+        <property name="luceneVersion" value="${LUCENE_VERSION}"/>
+        <property name="defaultSearchField" value="${DEFAULT_SEARCH_FIELD}"/>
+        <property name="defaultHitsPerPage" value="${DEFAULT_HITS_PER_PAGE}"/>
+    </bean>
+
+</beans>
